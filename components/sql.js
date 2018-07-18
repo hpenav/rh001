@@ -25,18 +25,21 @@ exports.getComponent = function() {
       return;
     }
     console.log("-->");
-    new sql.ConnectionPool(config).connect().then(pool => {
-        return pool.request().query('SELECT * FROM Veritrax5.dbo.tblEvents')
-        }).then(result => {
-          let rows = result.recordset
-          console.log(rows.length);
-          
-          sql.close();
-        }).catch(err => {
+    
+    const pool1 = new sql.ConnectionPool(config, err => {
 
-          sql.close();
-        });
-      });
+      pool1.request() // or: new sql.Request(pool1)
+        .query('SELECT * FROM Veritrax5.dbo.tblEvents', (err, result) => {
+
+            console.log(result)
+      }); //pool
+      
+    });
+ 
+    pool1.on('error', err => {
+        console.log("error>> " + err);
+    })
+
     // Read packets we need to process
     var data = input.getData('in');
     // Process data and send output
