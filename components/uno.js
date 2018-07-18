@@ -1,6 +1,13 @@
 const noflo = require('noflo');
 const sql = require('mssql')
 
+ var config = {
+    user: 'octa',
+    password: 'octa204!',
+    server: '192.168.100.107', 
+    database: 'Veritrax5' 
+};
+
 exports.getComponent = () => {
   const c = new noflo.Component();
   c.description = 'uno';
