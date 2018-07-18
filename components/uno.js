@@ -17,8 +17,20 @@ exports.getComponent = () => {
       return;
     }
     console.log("-->");
+    new sql.ConnectionPool(config).connect().then(pool => {
+        return pool.request().query(data)
+        }).then(result => {
+          let rows = result.recordset
+          
+          sql.close();
+        }).catch(err => {
+
+          sql.close();
+        });
+      });
     // Read packets we need to process
     const data = input.getData('in');
+  	console.log(rows[1]);
     // Process data and send output
     output.send({
       out: data
