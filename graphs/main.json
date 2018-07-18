@@ -24,7 +24,17 @@
             "component": "rh001/dos",
             "metadata": {
                 "label": "dos",
-                "x": 756,
+                "x": 720,
+                "y": 396,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "rh001/tres_w2jcg": {
+            "component": "rh001/tres",
+            "metadata": {
+                "label": "tres",
+                "x": 864,
                 "y": 396,
                 "width": 72,
                 "height": 72
@@ -40,6 +50,16 @@
             "tgt": {
                 "process": "rh001/dos_y5cn",
                 "port": "in"
+            }
+        },
+        {
+            "src": {
+                "process": "rh001/dos_y5cn",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "rh001/tres_w2jcg",
+                "port": "in"
             },
             "metadata": {}
         },
@@ -47,13 +67,6 @@
             "data": "data",
             "tgt": {
                 "process": "rh001/uno_2vbh6",
-                "port": "in"
-            }
-        },
-        {
-            "data": "data",
-            "tgt": {
-                "process": "rh001/dos_y5cn",
                 "port": "in"
             }
         }

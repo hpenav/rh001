@@ -2,8 +2,8 @@ var noflo = require('noflo');
 
 exports.getComponent = function() {
   var c = new noflo.Component();
-  c.description = 'dos';
-  c.icon = 'address-book';
+  c.description = 'tres';
+  c.icon = 'address-book-o';
   c.inPorts.add('in', {
     datatype: 'all',
     description: 'Packet to forward'
@@ -18,9 +18,8 @@ exports.getComponent = function() {
     }
     // Read packets we need to process
     var data = input.getData('in');
-    data = " [ " + data + " ] ";
+    console.log(" ** : " + data);
     // Process data and send output
-    console.log(">> : " + data);
     output.send({
       out: data
     });
