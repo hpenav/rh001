@@ -31,10 +31,11 @@ exports.getComponent = function() {
       pool1.request() // or: new sql.Request(pool1)
         .query('SELECT * FROM Veritrax5.dbo.tblEvents', (err, result) => {
 
-            //console.log(result);
+            console.log(result[1]);
+            pool1.request.close();
         })
         .on('done', result => {
-        	console.log(result[1])
+        	console.log(result.rowsAffected) // Returns number of affected rows in case of INSERT, UPDATE or DELETE statement.
             pool1.request.close();
         })
     });
