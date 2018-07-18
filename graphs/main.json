@@ -14,7 +14,17 @@
             "component": "rh001/uno",
             "metadata": {
                 "label": "uno",
-                "x": 648,
+                "x": 612,
+                "y": 396,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "rh001/dos_y5cn": {
+            "component": "rh001/dos",
+            "metadata": {
+                "label": "dos",
+                "x": 756,
                 "y": 396,
                 "width": 72,
                 "height": 72
@@ -23,9 +33,27 @@
     },
     "connections": [
         {
+            "src": {
+                "process": "rh001/uno_2vbh6",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "rh001/dos_y5cn",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
             "data": "data",
             "tgt": {
                 "process": "rh001/uno_2vbh6",
+                "port": "in"
+            }
+        },
+        {
+            "data": "data",
+            "tgt": {
+                "process": "rh001/dos_y5cn",
                 "port": "in"
             }
         }
