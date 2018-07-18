@@ -1,0 +1,33 @@
+{
+    "caseSensitive": false,
+    "properties": {
+        "name": "main",
+        "environment": {
+            "type": "noflo-nodejs"
+        }
+    },
+    "inports": {},
+    "outports": {},
+    "groups": [],
+    "processes": {
+        "rh001/uno_2vbh6": {
+            "component": "rh001/uno",
+            "metadata": {
+                "label": "uno",
+                "x": 648,
+                "y": 396,
+                "width": 72,
+                "height": 72
+            }
+        }
+    },
+    "connections": [
+        {
+            "data": "data",
+            "tgt": {
+                "process": "rh001/uno_2vbh6",
+                "port": "in"
+            }
+        }
+    ]
+}
