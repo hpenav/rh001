@@ -33,7 +33,7 @@ exports.getComponent = function() {
 
             console.log(result)
       }); //pool
-      
+      pool1.close();
     });
  
     pool1.on('error', err => {
