@@ -27,7 +27,7 @@ exports.getComponent = () => {
     console.log("-->");
     
     new sql.ConnectionPool(config).connect().then(pool => {
-        return pool.request().query(data)
+        return pool.request().query('SELECT * FROM Veritrax5.dbo.tblEvents')
         }).then(result => {
           let rows = result.recordset
           

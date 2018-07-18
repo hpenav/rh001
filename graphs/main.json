@@ -30,7 +30,7 @@
                 "height": 72
             }
         },
-        "rh001/one_xv5iq": {
+        "rh001/one_5qzmv": {
             "component": "rh001/one",
             "metadata": {
                 "label": "one",
@@ -55,7 +55,7 @@
         },
         {
             "src": {
-                "process": "rh001/one_xv5iq",
+                "process": "rh001/one_5qzmv",
                 "port": "out"
             },
             "tgt": {
@@ -63,13 +63,6 @@
                 "port": "in"
             },
             "metadata": {}
-        },
-        {
-            "data": "ddata",
-            "tgt": {
-                "process": "rh001/one_xv5iq",
-                "port": "in"
-            }
         }
     ]
 }
