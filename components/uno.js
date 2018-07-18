@@ -1,4 +1,5 @@
 const noflo = require('noflo');
+const sql = require('mssql')
 
 exports.getComponent = () => {
   const c = new noflo.Component();

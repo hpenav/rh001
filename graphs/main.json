@@ -14,8 +14,8 @@
             "component": "rh001/uno",
             "metadata": {
                 "label": "uno",
-                "x": 612,
-                "y": 396,
+                "x": 648,
+                "y": 360,
                 "width": 72,
                 "height": 72
             }
@@ -24,8 +24,8 @@
             "component": "rh001/dos",
             "metadata": {
                 "label": "dos",
-                "x": 720,
-                "y": 396,
+                "x": 756,
+                "y": 360,
                 "width": 72,
                 "height": 72
             }
@@ -34,8 +34,8 @@
             "component": "rh001/tres",
             "metadata": {
                 "label": "tres",
-                "x": 828,
-                "y": 396,
+                "x": 900,
+                "y": 360,
                 "width": 72,
                 "height": 72
             }
