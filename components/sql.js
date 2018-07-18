@@ -1,5 +1,6 @@
 var noflo = require('noflo');
- var config = {
+ 
+var config = {
     user: 'octa',
     password: 'octa204!',
     server: '192.168.100.107', 
@@ -23,6 +24,18 @@ exports.getComponent = function() {
       return;
     }
     console.log("-->");
+    new sql.ConnectionPool(config).connect().then(pool => {
+        return pool.request().query('SELECT * FROM Veritrax5.dbo.tblEvents')
+        }).then(result => {
+          let rows = result.recordset
+          console.log(rows.length);
+          
+          sql.close();
+        }).catch(err => {
+
+          sql.close();
+        });
+      });
     // Read packets we need to process
     var data = input.getData('in');
     // Process data and send output
