@@ -1,4 +1,10 @@
 var noflo = require('noflo');
+ var config = {
+    user: 'octa',
+    password: 'octa204!',
+    server: '192.168.100.107', 
+    database: 'Veritrax5' 
+};
 
 exports.getComponent = function() {
   var c = new noflo.Component();
@@ -16,6 +22,7 @@ exports.getComponent = function() {
     if (!input.hasData('in')) {
       return;
     }
+    console.log("-->");
     // Read packets we need to process
     var data = input.getData('in');
     // Process data and send output
