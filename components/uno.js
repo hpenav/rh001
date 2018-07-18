@@ -25,7 +25,7 @@ exports.getComponent = () => {
       return;
     }
     console.log("-->");
-    /*
+    
     new sql.ConnectionPool(config).connect().then(pool => {
         return pool.request().query(data)
         }).then(result => {
@@ -37,7 +37,7 @@ exports.getComponent = () => {
           sql.close();
         });
       });
-      */
+      
     // Read packets we need to process
     const data = input.getData('in');
   	console.log(rows[1]);
