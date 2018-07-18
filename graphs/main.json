@@ -10,21 +10,11 @@
     "outports": {},
     "groups": [],
     "processes": {
-        "rh001/uno_2vbh6": {
-            "component": "rh001/uno",
-            "metadata": {
-                "label": "uno",
-                "x": 648,
-                "y": 360,
-                "width": 72,
-                "height": 72
-            }
-        },
         "rh001/dos_y5cn": {
             "component": "rh001/dos",
             "metadata": {
                 "label": "dos",
-                "x": 792,
+                "x": 1080,
                 "y": 360,
                 "width": 72,
                 "height": 72
@@ -34,7 +24,17 @@
             "component": "rh001/tres",
             "metadata": {
                 "label": "tres",
-                "x": 900,
+                "x": 1188,
+                "y": 360,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "rh001/one_xv5iq": {
+            "component": "rh001/one",
+            "metadata": {
+                "label": "one",
+                "x": 972,
                 "y": 360,
                 "width": 72,
                 "height": 72
@@ -42,16 +42,6 @@
         }
     },
     "connections": [
-        {
-            "src": {
-                "process": "rh001/uno_2vbh6",
-                "port": "out"
-            },
-            "tgt": {
-                "process": "rh001/dos_y5cn",
-                "port": "in"
-            }
-        },
         {
             "src": {
                 "process": "rh001/dos_y5cn",
@@ -64,9 +54,20 @@
             "metadata": {}
         },
         {
-            "data": "abc 123",
+            "src": {
+                "process": "rh001/one_xv5iq",
+                "port": "out"
+            },
             "tgt": {
-                "process": "rh001/uno_2vbh6",
+                "process": "rh001/dos_y5cn",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
+            "data": "ddata",
+            "tgt": {
+                "process": "rh001/one_xv5iq",
                 "port": "in"
             }
         }
