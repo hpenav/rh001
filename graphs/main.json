@@ -34,7 +34,7 @@
             "component": "rh001/tres",
             "metadata": {
                 "label": "tres",
-                "x": 864,
+                "x": 828,
                 "y": 396,
                 "width": 72,
                 "height": 72
@@ -64,7 +64,7 @@
             "metadata": {}
         },
         {
-            "data": "data",
+            "data": "abc 123",
             "tgt": {
                 "process": "rh001/uno_2vbh6",
                 "port": "in"
