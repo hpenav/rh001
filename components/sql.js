@@ -5,7 +5,7 @@ var dateFormat = require('dateformat');
 var date = dateFormat(new Date(), "yyyy-mm-dd");
 var date1 = date + " 00:00:00";
 var date2 = date + " 23:59:59";
-var queryStr = 'SELECT * FROM Veritrax5.dbo.tblEvents where dEvent_Date between ' + date1 + ' and ' + date2 
+var queryStr = "SELECT * FROM Veritrax5.dbo.tblEvents where dEvent_Date between '" + date1 + "' and '" + date2 + "'" 
 
 
 console.log(date1);
@@ -41,10 +41,10 @@ exports.getComponent = function() {
 
       pool1.request() // or: new sql.Request(pool1)
         .query(queryStr, (err, result) => {
-			console.log(pool1);
+
             console.log(result.recordset[1].tCardCode);
             pool1.close();
-        	console.log(pool1);
+
         })
         .on('done', result => {
         	
