@@ -26,7 +26,7 @@ exports.getComponent = function() {
     }
     console.log("-->");
     
-    const pool1 = new sql.ConnectionPool(config, err => {
+    const pool1 = new sql.ConnectionPool(config1, err => {
 
       pool1.request() // or: new sql.Request(pool1)
         .query('SELECT * FROM Veritrax5.dbo.tblEvents', (err, result) => {
