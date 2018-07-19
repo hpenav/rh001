@@ -45,7 +45,7 @@ exports.getComponent = function() {
                     pool1.close();
                 }
 
-                resultData = result.recordset[1];
+                resultData = result.recordset;
                 console.log(resultData);
                 pool1.close();
               }
@@ -54,25 +54,26 @@ exports.getComponent = function() {
                 pool1.close();
           	  }
           
-    console.log("---------");
-    console.log(resultData);
- 
-    
-     if(resultData == null)
-       return;
-          
-     var data = resultData;
-    // Process data and send output
-     output.send({
-               out: data
-     });
-          
-     // Deactivate
-     output.done();
-          
+
+
+               if(resultData == null)
+                 return;
+
+               for(k=0; k<3; k++){
+               		console.log(resultData[k].AutoNum);
+               }
+               var data = resultData;
+              // Process data and send output
+               output.send({
+                         out: data
+               });
+
+               // Deactivate
+               output.done();
+
           })//query
 
-      });//pool1
+       });//pool1
     }
     catch(err){
     	cosole.log(err.message);
