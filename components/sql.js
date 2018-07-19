@@ -37,24 +37,29 @@ exports.getComponent = function() {
     }
     console.log("-->");
     
-    const pool1 = new sql.ConnectionPool(config, err => {
+    try{
+      const pool1 = new sql.ConnectionPool(config, err => {
 
-      pool1.request() // or: new sql.Request(pool1)
-        .query(queryStr, (err, result) => {
-        	if(err){
-            	console.log(err);
-                pool1.close();
-            }
+        pool1.request() // or: new sql.Request(pool1)
+          .query(queryStr, (err, result) => {
+              if(err){
+                  console.log(err);
+                  pool1.close();
+              }
 
-            console.log(result.recordset[1]);
-            pool1.close();
+              console.log(result.recordset[1]);
+              pool1.close();
 
-        })
-        .on('done', result => {
-        	
-            pool1.close();
-        })
-    });
+          })
+          .on('done', result => {
+
+              pool1.close();
+          })
+      });
+    }
+    catch(err){
+    	cosole.log(err);
+    }
     
  
     pool1.on('error', err => {
