@@ -65,14 +65,15 @@ exports.getComponent = function() {
                 for(k=0; k<3; k++){
                  
                		console.log(data[k].AutoNum);
-              		// Process data and send output
-               		output.send({
-                         out: data[k].AutoNum;
-               		});
+              		
                }//for
                
-               		// Deactivate
-               		output.done();
+               // Process data and send output
+               output.send({
+                     out: data[1].AutoNum;
+               });
+               // Deactivate
+               output.done();
               }//if
           
           })//query
