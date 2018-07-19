@@ -45,8 +45,7 @@ exports.getComponent = function() {
                     pool1.close();
                 }
 
-                resultData = result.recordset[1];
-                console.log(resultData);
+                resultData = result.recordset;
                 pool1.close();
               }
           	  catch(err){
@@ -54,22 +53,23 @@ exports.getComponent = function() {
                 pool1.close();
           	  }
           
-    console.log("---------");
-    console.log(resultData);
- 
-    
-     if(resultData == null)
-       return;
-          
-     var data = resultData;
-    // Process data and send output
-     output.send({
-               out: data
-     });
-          
-     // Deactivate
-     output.done();
-          
+
+
+
+               if(resultData == null)
+                 return;
+
+               var data = resultData[1];
+               console.log("---------");
+               console.log(data);
+              // Process data and send output
+               output.send({
+                         out: data
+               });
+
+               // Deactivate
+               output.done();
+
           })//query
 
       });//pool1
