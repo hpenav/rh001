@@ -45,30 +45,30 @@ exports.getComponent = function() {
                     pool1.close();
                 }
 
-                resultData = result.recordset;
+                resultData = result.recordset[1];
                 console.log(resultData);
-                
-                if(resultData == null)
-               return;
-             else{
- 				var data = resultData;
-                console.log("---------");
-    		    console.log(resultData[1]);
-                
-               
-               // Process data and send output
-               output.send({
-                     out: data[1];
-               });
-               // Deactivate
-               output.done();
-              }//if
                 pool1.close();
               }
           	  catch(err){
                 console.log(err.message);
                 pool1.close();
-          	  }          
+          	  }
+          
+    console.log("---------");
+    console.log(resultData);
+ 
+    
+     if(resultData == null)
+       return;
+          
+     var data = resultData;
+    // Process data and send output
+     output.send({
+               out: data
+     });
+          
+     // Deactivate
+     output.done();
           
           })//query
 
