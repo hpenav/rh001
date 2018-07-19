@@ -20,7 +20,7 @@ exports.getComponent = function() {
     var data = input.getData('in');
     data = " [ " + data + " ] ";
     // Process data and send output
-    console.log(">> : " + data);
+    console.log(">> : " + data.dEvent_Date);
     output.send({
       out: data
     });
