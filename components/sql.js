@@ -1,8 +1,8 @@
 var noflo = require('noflo');
 const sql = require('mssql')
-var dateFormat = require('dateformat');
+var moment = require('moment');
 
-var date = dateFormat(new Date(), "yyyy-mm-dd");
+var date = moment(new Date()).format("YYYY-MM-DD");
 var date1 = date + " 00:00:00";
 var date2 = date + " 23:59:59";
 var queryStr = "SELECT * FROM Veritrax5.dbo.tblEvents where dEvent_Date between '" + date1 + "' and '"  + date2 + "' and iReader = 1"; 
@@ -59,7 +59,7 @@ exports.getComponent = function() {
           
           	  console.log(resultData[1]);
               console.log(resultData[1].dEvent_Date);
-              console.log(new Date(resultData[1].dEvent_Date));
+              console.log(moment(resultData[1].dEvent_Date));
           
           	  var date1 = new Date(resultData[1].dEvent_Date);
               var date2 = new Date(resultData[0].dEvent_Date);                     
