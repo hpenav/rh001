@@ -45,7 +45,7 @@ exports.getComponent = function() {
                     pool1.close();
                 }
 
-                resultData = result.recordset[1];
+                resultData = result.recordset;
                 console.log(resultData);
                 pool1.close();
               }
@@ -61,16 +61,19 @@ exports.getComponent = function() {
              if(resultData == null)
                return;
              else{
-
-               var data = resultData;
-              // Process data and send output
-               output.send({
-                         out: data
-               });
-
-               // Deactivate
-               output.done();
-             }
+ 				var data = resultData;
+                for(i=0; i<3; i++){
+                 
+               		
+              		// Process data and send output
+               		output.send({
+                         out: data[i].AutoNum;
+               		});
+               }//for
+               
+               		// Deactivate
+               		output.done();
+              }//if
           
           })//query
 
