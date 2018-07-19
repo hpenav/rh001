@@ -18,9 +18,8 @@ exports.getComponent = function() {
     }
     // Read packets we need to process
     var data = input.getData('in');
-    data = " [ " + data + " ] ";
-    // Process data and send output
     console.log(">> : " + data.dEvent_Date);
+    // Process data and send output
     output.send({
       out: data
     });
