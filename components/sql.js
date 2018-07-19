@@ -35,7 +35,8 @@ exports.getComponent = function() {
             pool1.close();
         })
         .on('done', result => {
-        	console.log(result[1])
+        	console.log(result.recordset[1]);
+            console.log(result.recordset[1].tCardCode)
             pool1.close();
         })
     });
