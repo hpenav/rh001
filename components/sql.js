@@ -59,22 +59,19 @@ exports.getComponent = function() {
                if(resultData == null)
                  return;
 
-               var data = resultData[1];
-               console.log("---------");
-               console.log(data.AutoNum);
-              // Process data and send output
-               output.send({
-                         out: data
-               });
+          
+               var data = null;;
+          	   for(var k=0; k<10; k++){
+                 data = resultData[k]; 
+                 console.log("---------");
+                 console.log(data.AutoNum);
+                // Process data and send output
+                 output.send({
+                           out: data
+                 });
+               }
           
           
-          	   data = resultData[2];
-               
-               console.log(data.AutoNum);
-              // Process data and send output
-               output.send({
-                         out: data
-               });
           	   console.log("---------");
 
                // Deactivate
