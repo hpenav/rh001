@@ -59,7 +59,7 @@ exports.getComponent = function() {
                if(resultData == null)
                  return;
 
-               var data = resultData[1];
+               var data = resultData[1].AutoNum;
                console.log("---------");
                console.log(data);
               // Process data and send output
@@ -67,7 +67,8 @@ exports.getComponent = function() {
                          out: data
                });
           
-          	   data = resultData[1]
+          
+          	   data = resultData[2].AutoNum;
                
                console.log(data);
               // Process data and send output
