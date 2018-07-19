@@ -31,12 +31,12 @@ exports.getComponent = function() {
       pool1.request() // or: new sql.Request(pool1)
         .query('SELECT * FROM Veritrax5.dbo.tblEvents', (err, result) => {
 
-            console.log(result)
+            console.log(result.recordset[1]);
+            console.log(result.recordset[1].tCardCode);
             pool1.close();
         })
         .on('done', result => {
-        	console.log(result.recordset[1]);
-            console.log(result.recordset[1].tCardCode)
+        	
             pool1.close();
         })
     });
