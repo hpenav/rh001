@@ -59,7 +59,7 @@ exports.getComponent = function() {
 
           
               var data = null;;
-          	  for(var k=0; k<10; k++){
+          	  for(var k=0; k<resultdata.length; k++){
                  data = resultData[k]; 
                  console.log(data.AutoNum);
                 
