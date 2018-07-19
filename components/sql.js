@@ -61,7 +61,7 @@ exports.getComponent = function() {
               var data = null;;
           	  for(var k=0; k<resultData.length; k++){
                  data = resultData[k]; 
-                 console.log(data.AutoNum);
+                 console.log(k  + ": " + data.AutoNum);
                 
                  // Process data and send output
                  output.send({
