@@ -52,7 +52,7 @@ exports.getComponent = function() {
                 pool1.close();
               }
           	  catch(err){
-                cosole.log(err);
+                console.log(err);
                 pool1.close();
           	  }
 
