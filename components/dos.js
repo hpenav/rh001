@@ -18,9 +18,10 @@ exports.getComponent = function() {
     }
     // Read packets we need to process
     var data = input.getData('in');
-    if(data == null) return;
-    console.log(">> : " + data.AutoNum);
-    // Process data and send output
+    if(data != null) {
+    	console.log(">> : " + data.AutoNum);
+    	// Process data and send output
+    }
     output.send({
       out: data
     });
