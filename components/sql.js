@@ -54,7 +54,19 @@ exports.getComponent = function() {
                 pool1.close();
           	  }
           
-
+    console.log("---------");
+    console.log(resultData);
+ 
+    // Read packets we need to process
+     var data = resultData;
+    // Process data and send output
+     output.send({
+               out: data
+     });
+          
+     // Deactivate
+     output.done();
+          
           })//query
 
       });//pool1
