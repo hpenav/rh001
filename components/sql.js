@@ -7,11 +7,6 @@ var date1 = date + " 00:00:00";
 var date2 = date + " 23:59:59";
 var queryStr = "SELECT * FROM Veritrax5.dbo.tblEvents where dEvent_Date between '" + date1 + "' and '"  + date2 + "'"; 
 
-
-console.log(date1);
-console.log(date2); 
-console.log(queryStr);
-
 var config = {
     user: 'octa',
     password: 'octa204!',
@@ -64,6 +59,8 @@ exports.getComponent = function() {
     	cosole.log(err.message);
     }
     
+    console.log("---------");
+    console.log(result.recordset[1]);
  
     // Read packets we need to process
     var data = result.recordset[1];
