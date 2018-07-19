@@ -59,8 +59,8 @@ exports.getComponent = function() {
           
           	  console.log(resultData[1]);
               console.log(resultData[1].dEvent_Date);
-              var d1 = moment(new Date(resultData[1].dEvent_Date);
-                              console.log(">>>>>>>");
+              var d1 = moment(new Date(resultData[1].dEvent_Date));
+              console.log(">>>>>>>");
               console.log(d1);
           
           	  var date1 = new Date(resultData[1].dEvent_Date);
