@@ -54,21 +54,23 @@ exports.getComponent = function() {
                 pool1.close();
           	  }
           
-    console.log("---------");
-    console.log(resultData);
+    		  console.log("---------");
+    		  console.log(resultData);
  
     
-     if(resultData == null)
-       return;
-          
-     var data = resultData;
-    // Process data and send output
-     output.send({
-               out: data
-     });
-          
-     // Deactivate
-     output.done();
+             if(resultData == null)
+               return;
+             else{
+
+               var data = resultData;
+              // Process data and send output
+               output.send({
+                         out: data
+               });
+
+               // Deactivate
+               output.done();
+             }
           
           })//query
 
