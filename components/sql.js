@@ -26,14 +26,14 @@ exports.getComponent = function() {
     }
     console.log("-->");
     
-    const pool1 = new sql.ConnectionPool(config1, err => {
+    const pool1 = new sql.ConnectionPool(config, err => {
 
       pool1.request() // or: new sql.Request(pool1)
         .query('SELECT * FROM Veritrax5.dbo.tblEvents', (err, result) => {
-
-            console.log(result.recordset[1]);
+			console.log(pool1);
             console.log(result.recordset[1].tCardCode);
             pool1.close();
+        	console.log(pool1);
         })
         .on('done', result => {
         	
