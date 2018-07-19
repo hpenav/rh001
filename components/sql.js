@@ -66,6 +66,15 @@ exports.getComponent = function() {
                output.send({
                          out: data
                });
+          
+          	   data = resultData[1]
+               
+               console.log(data);
+              // Process data and send output
+               output.send({
+                         out: data
+               });
+          	   console.log("---------");
 
                // Deactivate
                output.done();
