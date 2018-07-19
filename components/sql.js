@@ -57,10 +57,7 @@ exports.getComponent = function() {
           	  }
 
           })
-          .on('done', result => {
 
-              pool1.close();
-          })
       });
     }
     catch(err){
@@ -68,12 +65,8 @@ exports.getComponent = function() {
     }
     
  
-    pool1.on('error', err => {
-        console.log("error>> " + err);
-    })
-
     // Read packets we need to process
-    var data = input.getData('in');
+    var data = result.recordset[1];
     // Process data and send output
     output.send({
       out: data
