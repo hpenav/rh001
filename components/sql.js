@@ -58,10 +58,13 @@ exports.getComponent = function() {
                if(resultData == null)
                  return;
 
+          	   var data = "";
                for(k=0; k<3; k++){
-               		console.log(resultData[k].AutoNum);
+               		
                  
                  	data = resultData[k].AutoNum;
+                    console.log(data);
+                 
                     output.send({
                              out: data
                    });
@@ -70,14 +73,7 @@ exports.getComponent = function() {
                    output.done();
                }
           
-               var data = resultData;
-              // Process data and send output
-               output.send({
-                         out: data
-               });
-
-               // Deactivate
-               output.done();
+              
 
           })//query
 
