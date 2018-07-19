@@ -32,13 +32,13 @@ exports.getComponent = function() {
     if (!input.hasData('in')) {
       return;
     }
-    console.log("-->");
     
     try{
       const pool1 = new sql.ConnectionPool(config, err => {
 
         pool1.request() // or: new sql.Request(pool1)
           .query(queryStr, (err, result) => {
+          
           	  try{
                 if(err){
                     console.log(err);
@@ -54,28 +54,26 @@ exports.getComponent = function() {
           	  }
           
 
-
-
-               if(resultData == null)
+              if(resultData == null)
                  return;
 
           
-               var data = null;;
-          	   for(var k=0; k<10; k++){
+              var data = null;;
+          	  for(var k=0; k<10; k++){
                  data = resultData[k]; 
-                 console.log("---------");
                  console.log(data.AutoNum);
-                // Process data and send output
+                
+                 // Process data and send output
                  output.send({
-                           out: data
+                     out: data
                  });
-               }
-          
-          
-          	   console.log("---------");
+                
+                 // Deactivate
+              	 output.done();
+              }//for
 
-               // Deactivate
-               output.done();
+              // Deactivate
+              output.done();
 
           })//query
 
@@ -84,8 +82,6 @@ exports.getComponent = function() {
     catch(err){
     	cosole.log(err.message);
     }
-    
-    
     
   });
   return c;
