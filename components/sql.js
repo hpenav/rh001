@@ -61,7 +61,7 @@ exports.getComponent = function() {
       });
     }
     catch(err){
-    	cosole.log(err);
+    	cosole.log(err.message);
     }
     
  
