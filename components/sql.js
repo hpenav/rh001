@@ -60,8 +60,9 @@ exports.getComponent = function() {
           	  console.log(resultData[1]);
               console.log(resultData[1].dEvent_Date);
               console.log(new Date(resultData[1].dEvent_Date));
-              if(resultData[1].dEvent_Date > resultData[0].dEvent_Date )
-                  console.log("is later date...");
+              if(resultData[1].dEvent_Date > resultData[0].dEvent_Date ){
+                  console.log("is later date..." + resultData[1].dEvent_Date - resultData[0].dEvent_Date);
+              }
 
           
               var data = null;;
