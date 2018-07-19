@@ -14,7 +14,7 @@
             "component": "rh001/dos",
             "metadata": {
                 "label": "dos",
-                "x": 1188,
+                "x": 1224,
                 "y": 324,
                 "width": 72,
                 "height": 72
@@ -50,8 +50,7 @@
             "tgt": {
                 "process": "rh001/tres_w2jcg",
                 "port": "in"
-            },
-            "metadata": {}
+            }
         },
         {
             "src": {
@@ -61,8 +60,7 @@
             "tgt": {
                 "process": "rh001/dos_y5cn",
                 "port": "in"
-            },
-            "metadata": {}
+            }
         },
         {
             "data": "abcd",
