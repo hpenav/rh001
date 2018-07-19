@@ -69,9 +69,11 @@ exports.getComponent = function() {
                              out: data
                    });
 
-                   // Deactivate
-                   output.done();
+
                }
+          
+               // Deactivate
+               output.done();
           
               
 
