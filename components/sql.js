@@ -59,18 +59,18 @@ exports.getComponent = function() {
                if(resultData == null)
                  return;
 
-               var data = resultData[1].AutoNum;
+               var data = resultData[1];
                console.log("---------");
-               console.log(data);
+               console.log(data.AutoNum);
               // Process data and send output
                output.send({
                          out: data
                });
           
           
-          	   data = resultData[2].AutoNum;
+          	   data = resultData[2];
                
-               console.log(data);
+               console.log(data.AutoNum);
               // Process data and send output
                output.send({
                          out: data
