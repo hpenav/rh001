@@ -46,7 +46,6 @@ exports.getComponent = function() {
                 }
 
                 resultData = result.recordset;
-                console.log(resultData);
                 pool1.close();
               }
           	  catch(err){
