@@ -45,7 +45,8 @@ exports.getComponent = function() {
                     pool1.close();
                 }
 
-                resultData = result.recordset;
+                resultData = result.recordset[1];
+                console.log(resultData);
                 pool1.close();
               }
           	  catch(err){
@@ -53,33 +54,25 @@ exports.getComponent = function() {
                 pool1.close();
           	  }
           
-
-
-               if(resultData == null)
-                 return;
-
-          	   var data = "";
-               for(k=0; k<3; k++){
-               		
-                 
-                 	data = resultData[k].AutoNum;
-                    console.log(data);
-                 
-                    output.send({
-                             out: data
-                   });
-
-
-               }
+    console.log("---------");
+    console.log(resultData);
+ 
+    
+     if(resultData == null)
+       return;
           
-               // Deactivate
-               output.done();
+     var data = resultData;
+    // Process data and send output
+     output.send({
+               out: data
+     });
           
-              
-
+     // Deactivate
+     output.done();
+          
           })//query
 
-       });//pool1
+      });//pool1
     }
     catch(err){
     	cosole.log(err.message);
