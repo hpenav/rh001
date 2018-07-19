@@ -62,12 +62,12 @@ exports.getComponent = function() {
                return;
              else{
  				var data = resultData;
-                for(i=0; i<3; i++){
+                for(k=0; k<3; k++){
                  
-               		
+               		console.log(data[k].AutoNum);
               		// Process data and send output
                		output.send({
-                         out: data[i].AutoNum;
+                         out: data[k].AutoNum;
                		});
                }//for
                
