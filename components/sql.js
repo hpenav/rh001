@@ -14,6 +14,8 @@ var config = {
     database: 'Veritrax5' 
 };
 
+var resultData = null;
+
 exports.getComponent = function() {
   var c = new noflo.Component();
   c.description = 'sql';
@@ -43,7 +45,8 @@ exports.getComponent = function() {
                     pool1.close();
                 }
 
-                console.log(result.recordset[1]);
+                resultData = result.recordset[1];
+                console.log(resultData);
                 pool1.close();
               }
           	  catch(err){
@@ -60,10 +63,10 @@ exports.getComponent = function() {
     }
     
     console.log("---------");
-    console.log(result.recordset[1]);
+    console.log(resultData);
  
     // Read packets we need to process
-    var data = result.recordset[1];
+    var data = resultData;
     // Process data and send output
     output.send({
       out: data
