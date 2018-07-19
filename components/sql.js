@@ -54,23 +54,20 @@ exports.getComponent = function() {
                 pool1.close();
           	  }
           
-    		  console.log("---------");
-    		  console.log(resultData);
+
  
     
              if(resultData == null)
                return;
              else{
  				var data = resultData;
-                for(k=0; k<3; k++){
-                 
-               		console.log(data[k].AutoNum);
-              		
-               }//for
+                console.log("---------");
+    		    console.log(resultData[1]);
+                
                
                // Process data and send output
                output.send({
-                     out: data[1].AutoNum;
+                     out: data[1];
                });
                // Deactivate
                output.done();
