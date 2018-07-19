@@ -72,9 +72,6 @@ exports.getComponent = function() {
               	 output.done();
               }//for
 
-              // Deactivate
-              output.done();
-
           })//query
 
       });//pool1
