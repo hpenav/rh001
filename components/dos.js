@@ -13,11 +13,12 @@ exports.getComponent = function() {
   });
   c.process(function (input, output) {
     // Check preconditions on input data
-    if (!input.hasData('in')  || input.getData('in') == null) {
+    if (!input.hasData('in')) {
       return;
     }
     // Read packets we need to process
     var data = input.getData('in');
+    if(data == null) return;
     console.log(">> : " + data.AutoNum);
     // Process data and send output
     output.send({
