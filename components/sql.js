@@ -57,7 +57,10 @@ exports.getComponent = function() {
     console.log("---------");
     console.log(resultData);
  
-    // Read packets we need to process
+    
+     if(resultData == null)
+       return;
+          
      var data = resultData;
     // Process data and send output
      output.send({
