@@ -13,7 +13,7 @@ exports.getComponent = function() {
   });
   c.process(function (input, output) {
     // Check preconditions on input data
-    if (!input.hasData('in')) {
+    if (!input.hasData('in')  || input.hasData('in') == null) {
       return;
     }
     // Read packets we need to process
