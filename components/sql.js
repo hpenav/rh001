@@ -1,6 +1,17 @@
 var noflo = require('noflo');
 const sql = require('mssql')
- 
+var dateFormat = require('dateformat');
+
+var date = dateFormat(new Date(), "yyyy-mm-dd");
+var date1 = date + " 00:00:00";
+var date2 = date + " 23:59:59";
+var queryStr = 'SELECT * FROM Veritrax5.dbo.tblEvents where dEvent_Date between ' + date1 + ' and ' + date2 
+
+
+console.log(date1);
+console.log(date2); 
+console.log(queryStr);
+
 var config = {
     user: 'octa',
     password: 'octa204!',
@@ -29,7 +40,7 @@ exports.getComponent = function() {
     const pool1 = new sql.ConnectionPool(config, err => {
 
       pool1.request() // or: new sql.Request(pool1)
-        .query('SELECT * FROM Veritrax5.dbo.tblEvents', (err, result) => {
+        .query(queryStr, (err, result) => {
 			console.log(pool1);
             console.log(result.recordset[1].tCardCode);
             pool1.close();
