@@ -56,6 +56,8 @@ exports.getComponent = function() {
 
               if(resultData == null)
                  return;
+          
+          	  console.log(resultData[1]);
 
           
               var data = null;;
