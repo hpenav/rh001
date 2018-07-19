@@ -47,17 +47,8 @@ exports.getComponent = function() {
 
                 resultData = result.recordset;
                 console.log(resultData);
-                pool1.close();
-              }
-          	  catch(err){
-                console.log(err.message);
-                pool1.close();
-          	  }
-          
-
- 
-    
-             if(resultData == null)
+                
+                if(resultData == null)
                return;
              else{
  				var data = resultData;
@@ -72,6 +63,12 @@ exports.getComponent = function() {
                // Deactivate
                output.done();
               }//if
+                pool1.close();
+              }
+          	  catch(err){
+                console.log(err.message);
+                pool1.close();
+          	  }          
           
           })//query
 
