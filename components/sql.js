@@ -42,13 +42,19 @@ exports.getComponent = function() {
 
         pool1.request() // or: new sql.Request(pool1)
           .query(queryStr, (err, result) => {
-              if(err){
-                  console.log(err);
-                  pool1.close();
-              }
+          	  try{
+                if(err){
+                    console.log(err);
+                    pool1.close();
+                }
 
-              console.log(result.recordset[1]);
-              pool1.close();
+                console.log(result.recordset[1]);
+                pool1.close();
+              }
+          	  catch(err){
+                cosole.log(err);
+                pool1.close();
+          	  }
 
           })
           .on('done', result => {
