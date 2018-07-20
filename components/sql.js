@@ -5,7 +5,7 @@ var moment = require('moment');
 var date = moment(new Date()).format("YYYY-MM-DD");
 var date1 = date + " 00:00:00";
 var date2 = date + " 23:59:59";
-var queryStr = "SELECT * FROM Veritrax5.dbo.tblEvents where dEvent_Date between '" + date1 + "' and '"  + date2 + "' and iReader = 1"; 
+var queryStr = "SELECT * FROM Veritrax5.dbo.tblEvents where dEvent_Date between '" + date1 + "' and '"  + date2 + "'"; 
 
 var config = {
     user: 'octa',
@@ -57,9 +57,9 @@ exports.getComponent = function() {
               if(resultData == null)
                  return;
           
-          /*
+          
           	  console.log(resultData[1]);
-              console.log(resultData[1].dEvent_Date);
+          /*    console.log(resultData[1].dEvent_Date);
               var d1 = moment(new Date(resultData[1].dEvent_Date));
               console.log(">>>>>>>");
               console.log(d1.seconds());
