@@ -57,18 +57,19 @@ exports.getComponent = function() {
               if(resultData == null)
                  return;
           
+          /*
           	  console.log(resultData[1]);
               console.log(resultData[1].dEvent_Date);
               var d1 = moment(new Date(resultData[1].dEvent_Date));
               console.log(">>>>>>>");
               console.log(d1.seconds());
           
-          	  var date1 = new Date(resultData[1].dEvent_Date);
-              var date2 = new Date(resultData[0].dEvent_Date);                     
-              if(resultData[1].dEvent_Date > resultData[0].dEvent_Date ){
-                  console.log("is later date..." + date1 - date2);
+          	  var date2 = moment(new Date(resultData[1].dEvent_Date));
+              var date1 = moment(new Date(resultData[0].dEvent_Date));                     
+              if(date2 > date1){
+                  console.log("is later date..." + date2.diff(date1));
               }
-
+*/
           
               var data = null;;
           	  for(var k=0; k<resultData.length; k++){
