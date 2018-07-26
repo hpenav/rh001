@@ -7,6 +7,8 @@ var date1 = date + " 00:00:00";
 var date2 = date + " 23:59:59";
 var queryStr = "SELECT * FROM Veritrax5.dbo.tblEvents where dEvent_Date between '" + date1 + "' and '"  + date2 + "'"; 
 
+console.log(queryStr);
+
 var config = {
     user: 'octa',
     password: 'octa204!',
