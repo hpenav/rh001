@@ -12,16 +12,6 @@
     "outports": {},
     "groups": [],
     "processes": {
-        "noflort/sql_6ejg1": {
-            "component": "noflort/sql",
-            "metadata": {
-                "label": "sql",
-                "x": 324,
-                "y": 396,
-                "width": 72,
-                "height": 72
-            }
-        },
         "rh001/rethinkDB_llgia": {
             "component": "rh001/rethinkDB",
             "metadata": {
@@ -31,12 +21,22 @@
                 "width": 72,
                 "height": 72
             }
+        },
+        "rh001/sql_9e4no": {
+            "component": "rh001/sql",
+            "metadata": {
+                "label": "sql",
+                "x": 324,
+                "y": 396,
+                "width": 72,
+                "height": 72
+            }
         }
     },
     "connections": [
         {
             "src": {
-                "process": "noflort/sql_6ejg1",
+                "process": "rh001/sql_9e4no",
                 "port": "out"
             },
             "tgt": {
@@ -46,9 +46,9 @@
             "metadata": {}
         },
         {
-            "data": "abcd",
+            "data": "12345",
             "tgt": {
-                "process": "noflort/sql_6ejg1",
+                "process": "rh001/sql_9e4no",
                 "port": "in"
             }
         }
