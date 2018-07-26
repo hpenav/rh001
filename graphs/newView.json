@@ -21,9 +21,30 @@
                 "width": 72,
                 "height": 72
             }
+        },
+        "rh001/rethinkDB_llgia": {
+            "component": "rh001/rethinkDB",
+            "metadata": {
+                "label": "rethinkDB",
+                "x": 432,
+                "y": 396,
+                "width": 72,
+                "height": 72
+            }
         }
     },
     "connections": [
+        {
+            "src": {
+                "process": "noflort/sql_6ejg1",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "rh001/rethinkDB_llgia",
+                "port": "in"
+            },
+            "metadata": {}
+        },
         {
             "data": "abcd",
             "tgt": {
