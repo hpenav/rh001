@@ -25,7 +25,7 @@ exports.getComponent = () => {
     // Read packets we need to process
     const data = input.getData('in');
     // Process data and send output
-    console.log("--> " + data.iUserNum");
+    console.log("--> " + data);
     output.send({
       out: data
     });
