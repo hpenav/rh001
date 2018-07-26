@@ -1,0 +1,35 @@
+{
+    "caseSensitive": false,
+    "properties": {
+        "name": "newView",
+        "description": "newwView",
+        "icon": "window-maximize",
+        "environment": {
+            "type": "noflo-nodejs"
+        }
+    },
+    "inports": {},
+    "outports": {},
+    "groups": [],
+    "processes": {
+        "noflort/sql_6ejg1": {
+            "component": "noflort/sql",
+            "metadata": {
+                "label": "sql",
+                "x": 396,
+                "y": 396,
+                "width": 72,
+                "height": 72
+            }
+        }
+    },
+    "connections": [
+        {
+            "data": "abcd",
+            "tgt": {
+                "process": "noflort/sql_6ejg1",
+                "port": "in"
+            }
+        }
+    ]
+}
