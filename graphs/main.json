@@ -62,6 +62,13 @@
                 "port": "in"
             },
             "metadata": {}
+        },
+        {
+            "data": "12345",
+            "tgt": {
+                "process": "rh001/sqln_9pmcb",
+                "port": "in"
+            }
         }
     ]
 }
