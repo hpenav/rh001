@@ -1,4 +1,10 @@
 const noflo = require('noflo');
+var r = require('rethinkdbdash')({
+    servers: [
+        {host: 'localhost', port: 28015}
+    ],
+	db: "Octa"
+});
 
 exports.getComponent = () => {
   const c = new noflo.Component();
