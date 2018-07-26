@@ -3,8 +3,8 @@ const sql = require('mssql')
 var moment = require('moment');
 
 var date = moment(new Date()).format("YYYY-MM-DD");
-var date1 = date + " 00:00:00";
-var date2 = date + " 23:59:59";
+var date1 = date + " 00:00";
+var date2 = date + " 23:59";
 var queryStr = "SELECT * FROM Veritrax5.dbo.tblEvents where dEvent_Date between '" + date1 + "' and '"  + date2 + "'"; 
 
 console.log(queryStr);
@@ -36,6 +36,7 @@ exports.getComponent = function() {
     }
     
     try{
+      console.log("to create connection...");
       const pool1 = new sql.ConnectionPool(config, err => {
 
         console.log(queryStr);
