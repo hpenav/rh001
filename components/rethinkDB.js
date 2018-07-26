@@ -25,7 +25,7 @@ exports.getComponent = () => {
     // Read packets we need to process
     const data = input.getData('in');
     // Process data and send output
-    console.log("--> " + data);
+    console.log("--> " + data.iUserNum");
     output.send({
       out: data
     });
@@ -34,3 +34,32 @@ exports.getComponent = () => {
   });
   return c;
 };
+
+
+/*
+{
+  "AutoNum": "78224",
+  "Event_Desc": null,
+  "bAlarmHandl": 0,
+  "bCamera": false,
+  "bDoorNumber": 1,
+  "dEvent_Date": "2018-07-19T07:52:05.000Z",
+  "dtSave": "2018-07-19T09:29:36.000Z",
+  "iCamera": 0,
+  "iDoor": 0,
+  "iEventNum": 774,
+  "iInput": 0,
+  "iOutput": 0,
+  "iReader": 1,
+  "iServerVitrax": 0,
+  "iSlotNum": 4,
+  "iUserNum": 8,
+  "iUserSlot": 8,
+  "id": "1a867f81-f167-4678-a364-11bda82dceb6",
+  "tByte6": "11",
+  "tByte7": "01",
+  "tByte8": "21",
+  "tCameraIdent": "",
+  "tCardCode": ""
+}
+*/
