@@ -26,6 +26,10 @@ exports.getComponent = () => {
     const data = input.getData('in');
     // Process data and send output
     console.log("--> " + data.iUserNum);
+    var userNum = data.iUserNum; 
+    r.table('Axtrax_Employee').filter({axtraxID: userNum}).run().then(function(result){
+    	console.log(result);
+    })
     output.send({
       out: data
     });
