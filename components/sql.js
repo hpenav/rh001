@@ -7,7 +7,6 @@ var date1 = date + " 00:00";
 var date2 = date + " 23:59";
 var queryStr = "SELECT * FROM Veritrax5.dbo.tblEvents where dEvent_Date between '" + date1 + "' and '"  + date2 + "'"; 
 
-console.log(queryStr);
 
 var config = {
     user: 'octa',
@@ -19,7 +18,7 @@ var config = {
 var resultData = null;
 
 exports.getComponent = function() {
-  console.log("1..");
+
   var c = new noflo.Component();
   c.description = 'sql';
   c.icon = 'android';
@@ -30,7 +29,7 @@ exports.getComponent = function() {
   c.outPorts.add('out', {
     datatype: 'all'
   });
-  console.log("2..");
+
   c.process(function (input, output) {
     console.log("3..");
     // Check preconditions on input data
@@ -42,7 +41,6 @@ exports.getComponent = function() {
       console.log("to create connection...");
       const pool1 = new sql.ConnectionPool(config, err => {
 
-        console.log(queryStr);
         pool1.request() // or: new sql.Request(pool1)
           .query(queryStr, (err, result) => {
           
