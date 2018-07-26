@@ -62,7 +62,7 @@ exports.getComponent = function() {
           
           
           	  console.log(resultData[1]);
-          /*    console.log(resultData[1].dEvent_Date);
+            console.log(resultData[1].dEvent_Date);
               var d1 = moment(new Date(resultData[1].dEvent_Date));
               console.log(">>>>>>>");
               console.log(d1.seconds());
@@ -72,7 +72,7 @@ exports.getComponent = function() {
               if(date2 > date1){
                   console.log("is later date..." + date2.diff(date1));
               }
-*/
+
           
               var data = null;;
           	  for(var k=0; k<resultData.length; k++){
