@@ -30,10 +30,10 @@
                 "height": 72
             }
         },
-        "rh001/sql_kzjto": {
-            "component": "rh001/sql",
+        "rh001/sqln_9pmcb": {
+            "component": "rh001/sqln",
             "metadata": {
-                "label": "sql",
+                "label": "sqln",
                 "x": 1080,
                 "y": 324,
                 "width": 72,
@@ -54,20 +54,14 @@
         },
         {
             "src": {
-                "process": "rh001/sql_kzjto",
+                "process": "rh001/sqln_9pmcb",
                 "port": "out"
             },
             "tgt": {
                 "process": "rh001/dos_y5cn",
                 "port": "in"
-            }
-        },
-        {
-            "data": "abcd",
-            "tgt": {
-                "process": "rh001/sql_kzjto",
-                "port": "in"
-            }
+            },
+            "metadata": {}
         }
     ]
 }
