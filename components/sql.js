@@ -19,6 +19,7 @@ var config = {
 var resultData = null;
 
 exports.getComponent = function() {
+  console.log("1..");
   var c = new noflo.Component();
   c.description = 'sql';
   c.icon = 'android';
@@ -29,12 +30,14 @@ exports.getComponent = function() {
   c.outPorts.add('out', {
     datatype: 'all'
   });
+  console.log("2..");
   c.process(function (input, output) {
+    console.log("3..");
     // Check preconditions on input data
     if (!input.hasData('in')) {
       return;
     }
-    
+    console.log("4..");
     try{
       console.log("to create connection...");
       const pool1 = new sql.ConnectionPool(config, err => {
@@ -63,7 +66,7 @@ exports.getComponent = function() {
           
           
           	  console.log(resultData[1]);
-            console.log(resultData[1].dEvent_Date);
+              console.log(resultData[1].dEvent_Date);
               var d1 = moment(new Date(resultData[1].dEvent_Date));
               console.log(">>>>>>>");
               console.log(d1.seconds());
