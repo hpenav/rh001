@@ -36,6 +36,7 @@ exports.getComponent = function() {
     try{
       const pool1 = new sql.ConnectionPool(config, err => {
 
+        console.log(queryStr);
         pool1.request() // or: new sql.Request(pool1)
           .query(queryStr, (err, result) => {
           
