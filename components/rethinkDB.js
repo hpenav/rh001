@@ -42,7 +42,7 @@ exports.getComponent = () => {
                  console.log(result);
                  if(result.length == 0){
                    r.table("AxtraxEvents").insert({
-                      'date':_todayDate;
+                      'date':_todayDate,
                       'employeeID': _employeeID
                    }).run();
                  }
