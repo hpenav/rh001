@@ -35,9 +35,9 @@ exports.getComponent = function() {
       .run().then(function(result){
           if(result.length > 0 ){
               var _index = result[0].id;
-              r.table("AxtraxEvents").get(_index).update(
-                 { "AxtraxRecords": r.row("AxtraxRecords").default([]).append(data) }
-              );
+              r.table('AxtraxEvents').get(_index).update(
+                 { 'AxtraxRecords': r.row('AxtraxRecords').default([]).append(data) }
+              ).run();
           }//if
       })
     
