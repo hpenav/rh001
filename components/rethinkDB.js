@@ -34,7 +34,8 @@ exports.getComponent = () => {
         r.table('AxtraxEvents').filter(
           r.row('date').default('?').eq('2018-07-27')
         ).then(function(result){
-          console.log(result[0].employeeID)
+          if(result[0].employeeID == employeeID)
+          	console.log(result[0].employeeID)
         })
       }
       
