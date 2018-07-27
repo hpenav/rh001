@@ -44,18 +44,21 @@ exports.getComponent = () => {
                    r.table("AxtraxEvents").insert({
                       'date':_todayDate,
                       'employeeID': _employeeID
-                   }).run();
-                 }
+                   }).run().then(function(result){
+                     output.send({
+                       out: data
+                     });
+                     // Deactivate
+                     output.done();
+                   });
+                   
+                 }//if
                   
                })
-      }
+      }//if
       
     })
-    output.send({
-      out: data
-    });
-    // Deactivate
-    output.done();
+    
   });
   return c;
 };
