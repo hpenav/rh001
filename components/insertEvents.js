@@ -29,6 +29,17 @@ exports.getComponent = function() {
     }
     // Read packets we need to process
     var data = input.getData('in');
+    console.log(data);
+    r.table("AxtraxEvents").filter(r.row('employeeID')
+      .eq(data.employeeID).and(r.row("date").eq(_todayDate)))
+      .run(function(result){
+          if(result.length > 0 ){
+              var _index = result[0].id;
+              r.table("AxtraxEvents").get(_index).update(
+                 { "AxtraxRecords": r.row("AxtraxRecords").default([]).append(data) }
+              );
+          }
+      })
     
     // Process data and send output
     output.send({
