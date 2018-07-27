@@ -33,11 +33,10 @@ exports.getComponent = () => {
       console.log(result); 
       
       if(result.length > 0 ){
-        var test = "abcedef";
         r.table('AxtraxEvents').filter(
           r.row('date').default('?').eq('2018-07-27')
         ).then(function(result){
-          console.log(data.employeeID)
+          console.log(data.date)
         })
       }
       
