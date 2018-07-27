@@ -33,7 +33,8 @@ exports.getComponent = () => {
       var employeeID = data.employeeID;
       if(result.length > 0 ){
         r.table('AxtraxEvents').filter(
-          r.row('date').default('?').eq('2018-07-27').and(r.row("employeeID")default('?').eq(employeeID))
+          r.row('date').default('?').eq('2018-07-27')
+          .and(r.row("employeeID")default('?').eq("3bc21c53-26d0-498f-bdc9-2f8a53e05b8f"))
         ).then(function(result){console.log(result)})
       }
       
