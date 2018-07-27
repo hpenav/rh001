@@ -45,11 +45,7 @@ exports.getComponent = () => {
                       'date':_todayDate,
                       'employeeID': _employeeID
                    }).run().then(function(result){
-                     output.send({
-                       out: data
-                     });
-                     // Deactivate
-                     output.done();
+                     console.log(result);
                    });
                    
                  }//if
