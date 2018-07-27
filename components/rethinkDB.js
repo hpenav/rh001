@@ -1,5 +1,5 @@
 const noflo = require('noflo');
-const noflo = require('moment');
+const moment = require('moment');
 
 var _todayDate = moment(new Date()).format("YYYY-MM-DD");
 
@@ -41,7 +41,10 @@ exports.getComponent = () => {
         .run().then(function(result){
                  console.log(result);
                  if(result.length == 0){
-                   console.log("insertart...");
+                   r.table("AxtraxEvents").insert({
+                      'date':_todayDate;
+                      'employeeID': _employeeID
+                   }).run();
                  }
                   
                })
