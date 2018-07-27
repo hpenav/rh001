@@ -40,10 +40,10 @@ exports.getComponent = () => {
         r.table('AxtraxEvents').filter(r.row('employeeID').eq(_employeeID).and(r.row('date').eq(_todayDate)))
         .run().then(function(result){
                   if(result.length==0){
-                      r.table('AxtraxEvent').insert({
+                      r.table('AxtraxEvents').insert({
                         'date': _todayDate,
                         'employeID': _employeeID
-                      })
+                      }).run().then(function(result){console.log(result)})
                   }
                })
       }
