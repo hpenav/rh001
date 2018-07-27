@@ -32,7 +32,7 @@ exports.getComponent = () => {
       
       if(result.length > 0 ){
         var _employeeID = result[0].employeeID;
-        r.table('AxtraxEvents').filter({employeeID:_employeeID})
+        r.table('AxtraxEvents').filter({employeeID:_employeeID},{date:'2018-07-27'})
         .run().then(function(result){
                   console.log(result);
                })
