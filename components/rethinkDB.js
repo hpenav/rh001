@@ -1,4 +1,8 @@
 const noflo = require('noflo');
+const noflo = require('moment');
+
+var _todayDate = moment(new Date()).format("YYYY-MM-DD");
+
 var r = require('rethinkdbdash')({
     servers: [
         {host: 'localhost', port: 28015}
@@ -32,10 +36,15 @@ exports.getComponent = () => {
       
       if(result.length > 0 ){
         var _employeeID = result[0].employeeID;
-        var _date = '2018-07-27'
-        r.table('AxtraxEvents').filter(r.row('employeeID').eq(_employeeID).and(r.row('date').eq(_date)))
+        
+        r.table('AxtraxEvents').filter(r.row('employeeID').eq(_employeeID).and(r.row('date').eq(_todayDate)))
         .run().then(function(result){
-                  console.log(result);
+                  if(result.length==0){
+                      r.table('AxtraxEvent').insert({
+                        'date': _todayDate,
+                        'employeID': _employeeID
+                      })
+                  }
                })
       }
       
