@@ -31,12 +31,13 @@ exports.getComponent = () => {
     r.table('Axtrax_Employee').filter({axtraxID: userNum}).run().then(function(result){
       
       if(result.length > 0 ){
-        r.table('AxtraxEvents').filter(
-          r.row('date').default('?').eq('2018-07-27')
-        ).then(function(result){
-          
-          	console.log(result[0].employeeID)
-        })
+        var _employeeeID = result[0].employeeID;
+        r.table('AxtraxEvents').getAll('2018-07-27', {index:"date"})
+        .run().then(function(result){
+                  console.log(result);
+                  console.log(_employeeID);
+          	      console.log("==============="):
+               })
       }
       
     })
