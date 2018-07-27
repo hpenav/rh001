@@ -45,20 +45,29 @@ exports.getComponent = () => {
                       'date':_todayDate,
                       'employeeID': _employeeID
                    }).run().then(function(result){
-                     console.log(result);
+                     data.employeeID = _employeeID;
+                     output.send({
+                       out: data
+                     });
+                     // Deactivate
+                     output.done();
                    });
                    
                  }//if
+                 else{
+                     data.employeeID = _employeeID;
+                     output.send({
+                       out: data
+                     });
+                     // Deactivate
+                     output.done();
+                 }
                   
                })
       }//if
       
     })
-    output.send({
-                       out: data
-                     });
-                     // Deactivate
-                     output.done();
+
   });
   return c;
 };
