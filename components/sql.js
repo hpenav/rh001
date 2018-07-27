@@ -31,12 +31,12 @@ exports.getComponent = function() {
   });
 
   c.process(function (input, output) {
-    console.log("3..");
+
     // Check preconditions on input data
     if (!input.hasData('in')) {
       return;
     }
-    console.log("4..");
+
     try{
       console.log("to create connection...");
       const pool1 = new sql.ConnectionPool(config, err => {
