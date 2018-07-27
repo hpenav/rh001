@@ -58,7 +58,11 @@ exports.getComponent = () => {
       }//if
       
     })
-    
+    output.send({
+                       out: data
+                     });
+                     // Deactivate
+                     output.done();
   });
   return c;
 };
