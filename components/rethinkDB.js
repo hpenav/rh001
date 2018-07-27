@@ -27,12 +27,12 @@ exports.getComponent = () => {
     // Process data and send output
     
     var userNum = data.iUserNum; 
-    var employeeID = data.employeeID;
+    
     r.table('Axtrax_Employee').filter({axtraxID: userNum}).run().then(function(result){
       
       if(result.length > 0 ){
-        var vemployeeeID = result[0].employeeID;
-        r.table('AxtraxEvents').getAll('2018-07-27', {index:'date'})
+        var _employeeID = result[0].employeeID;
+        r.table('AxtraxEvents').filter({employeeID:_employeeID})
         .run().then(function(result){
                   console.log(result);
                })
