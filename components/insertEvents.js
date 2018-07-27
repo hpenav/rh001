@@ -29,16 +29,16 @@ exports.getComponent = function() {
     }
     // Read packets we need to process
     var data = input.getData('in');
-    console.log(data);
+    console.log(data.employeeID);
     r.table("AxtraxEvents").filter(r.row('employeeID')
-      .eq(data.employeeID).and(r.row("date").eq(_todayDate)))
+      .eq(data.employeeID))
       .run(function(result){
           if(result.length > 0 ){
               var _index = result[0].id;
               r.table("AxtraxEvents").get(_index).update(
                  { "AxtraxRecords": r.row("AxtraxRecords").default([]).append(data) }
               );
-          }
+          }//iff
       })
     
     // Process data and send output
